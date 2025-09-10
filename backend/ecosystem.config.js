@@ -22,7 +22,11 @@ module.exports = {
       path: process.env.DEPLOY_PATH,
       'pre-deploy-local': '',
       'post-deploy': `
-        "cd backend && pwd && npm ci && npm i && npm run build && pm2 startOrRestart ecosystem.config.js --env production",
+        cd backend &&
+        npm ci &&
+        npm run build &&
+        cp ${process.env.DEPLOY_PATH}/shared/.env ${process.env.DEPLOY_PATH}/current/backend/.env &&
+        pm2 startOrRestart ecosystem.config.js --env production
       `,
     },
   },
