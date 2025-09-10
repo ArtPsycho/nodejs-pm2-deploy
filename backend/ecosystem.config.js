@@ -20,7 +20,6 @@ module.exports = {
       ref: 'origin/master',
       repo: process.env.DEPLOY_REPO,
       path: process.env.DEPLOY_PATH,
-      'forward-agent': 'yes',
       'pre-deploy-local': '',
       'post-deploy': `
         cd backend &&
