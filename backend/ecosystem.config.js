@@ -28,6 +28,11 @@ module.exports = {
         cp ${process.env.DEPLOY_PATH}/shared/.env ${process.env.DEPLOY_PATH}/current/backend/.env &&
         pm2 startOrRestart ecosystem.config.js --env production
       `,
+      ssh_options: [
+        "StrictHostKeyChecking no",
+        "PasswordAuthentication no",
+        "IdentityFile ~/.ssh/id_ed25519"
+      ],
     },
   },
 };
