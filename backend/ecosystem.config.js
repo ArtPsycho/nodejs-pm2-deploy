@@ -1,4 +1,4 @@
-require('dotenv').config({ path: '.env.deploy' });
+require('dotenv').config({path: '.env.deploy'});
 
 module.exports = {
   apps: [
@@ -20,6 +20,7 @@ module.exports = {
       ref: 'origin/master',
       repo: process.env.DEPLOY_REPO,
       path: process.env.DEPLOY_PATH,
+      'forward-agent': 'yes',
       'pre-deploy-local': '',
       'post-deploy': `
         cd backend &&
@@ -28,11 +29,6 @@ module.exports = {
         cp ${process.env.DEPLOY_PATH}/shared/.env ${process.env.DEPLOY_PATH}/current/backend/.env &&
         pm2 startOrRestart ecosystem.config.js --env production
       `,
-      ssh_options: [
-        "StrictHostKeyChecking no",
-        "PasswordAuthentication no",
-        "ForwardAgent yes"
-      ],
     },
   },
 };
