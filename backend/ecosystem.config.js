@@ -19,7 +19,7 @@ module.exports = {
       host: process.env.DEPLOY_SERVER,
       ref: 'origin/master',
       repo: process.env.DEPLOY_REPO,
-      path: process.env.DEPLOY_PATH + '/backend',
+      path: process.env.DEPLOY_PATH,
       'pre-deploy-local': '',
       'post-deploy': `
         cp ~/local/path/to/.env backend/.env &&

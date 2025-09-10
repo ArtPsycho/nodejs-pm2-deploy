@@ -18,7 +18,7 @@ module.exports = {
       host: process.env.DEPLOY_SERVER,
       ref: 'origin/master',
       repo: process.env.DEPLOY_REPO,
-      path: process.env.DEPLOY_PATH + '/frontend',
+      path: process.env.DEPLOY_PATH,
       'pre-deploy-local': '',
       'post-deploy': `
         cd frontend &&
