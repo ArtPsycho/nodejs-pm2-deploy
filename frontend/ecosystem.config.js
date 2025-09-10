@@ -5,7 +5,7 @@ module.exports = {
     {
       name: 'frontend',
       script: 'serve',
-      args: '-s build -l 3000',
+      args: '-s build -l 3001',
       env: {
         NODE_ENV: 'production',
       },
