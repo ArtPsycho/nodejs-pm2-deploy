@@ -16,7 +16,7 @@ mongoose.connect(DB_ADDRESS);
 // Только для локальных тестов. Не используйте это в продакшене
 // app.use(cors())
 app.use(cors({
-  origin: 'http://http://artpsycho.students.nomorepartiessbs.ru/',
+  origin: 'http://artpsycho.students.nomorepartiessbs.ru/',
   credentials: true,
 }));
 app.use(express.json());
