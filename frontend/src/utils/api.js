@@ -139,6 +139,6 @@ class Api {
   }
   }
   // Замените на адрес вашего бэкенда
-  const api = new Api('api.artpsycho.students.nomorepartiessbs.ru');
+  const api = new Api('http://api.artpsycho.students.nomorepartiessbs.ru');
 
   export default api;
